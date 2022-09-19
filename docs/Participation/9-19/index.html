@@ -8,14 +8,22 @@
 </head>
 <body>
   <h1>Hello, World! New web page, who is this?</h1>
-  <img src="icee.jpg" alt="">
+  <img src="icee.jpg" alt="Icee image">
   <!--Reminder: no method attribute specified so it's GET-->
   <form action="submission.html">
-
-    <label for="first">First Name</label>
-    <input type="text" id="first" name="first"> <!--name doesn't have to be the same as the id-->
-
-    <input type="submit">
+    <p>
+      <label for="first">First Name</label>
+      <input type="text" id="first" name="first" placeholder="FIRST name only please"> <!--name doesn't have to be the same as the id-->
+    </p>
+    <p>
+      <label for="last">Last Name</label>
+      <input type="text" id="last" name="last" placeholder="LAST name only please"> <!--name doesn't have to be the same as the id-->
+    </p>
+    <p>
+      <label for="area">Tell me a story...</label>
+      <textarea id="area" name="area" type="textarea" rows="5" placeholder="Enter multi line text here"></textarea>
+    </p>
+    <input type="submit" value="Submit Form Data">
   </form>
 </body>
 </html>
