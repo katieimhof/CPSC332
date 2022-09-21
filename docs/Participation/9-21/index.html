@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9-19 Participation (Fake form)</title>
+</head>
+<body>
+  <h1>Hello, World! New web page, who is this?</h1>
+  <!--Reminder: no method attribute specified so it's GET-->
+  <form action="submission.html">
+    <p>
+      <label for="first">First Name</label>
+      <input type="text" id="first" name="first" placeholder="FIRST name only please"> <!--name doesn't have to be the same as the id-->
+    </p>
+    <p>
+      <label for="last">Last Name</label>
+      <input type="text" id="last" name="last" placeholder="LAST name only please"> <!--name doesn't have to be the same as the id-->
+    </p>
+    <p>
+      <label for="area">Tell me a story...</label>
+      <textarea id="area" name="area" type="textarea" rows="5" placeholder="Enter multi line text here"></textarea>
+    </p>
+    <p>
+      <label for="flavor">What's your favorite flavor of Icee?</label>
+      <select name="flavor">
+        <option value="blue">Blue Raspberry</option>
+        <option value="cherry">Cherry</option>
+        <option value="coke">Coca-Cola</option>
+      </select>
+    </p>
+    <p>
+      <label for="size">What size do you want?</label>
+      <br>
+      <label for="sixteen">16 oz.</label>
+      <input type="checkbox" id="sixteen" name="sixteen">
+      <label for="twenty">20 oz.</label>
+      <input type="checkbox" id="twenty" name="twenty">
+      <label for="four">24 oz.</label>
+      <input type="checkbox" id="four" name="four">
+      <label for="thirty">32 oz.</label>
+      <input type="checkbox" id="thirty" name="thirty">
+    </p>
+    <p>
+      <label for="question">How many do you want?</label>
+      <br>
+      <label for="one">One</label>
+      <input type="radio" id="one" name="one">
+      <label for="two">Two</label>
+      <input type="radio" id="two" name="two">
+      <label for="three">Three</label>
+      <input type="radio" id="three" name="three">
+    </p>
+    <input type="submit" value="Submit Form Data">
+  </form>
+</body>
+</html>
