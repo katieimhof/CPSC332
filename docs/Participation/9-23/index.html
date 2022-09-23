@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-23 Participation</title>
+
+    <link rel="stylesheet" href="my-style-sheet.css">
+    <!-- This is the embedded -->
+    <style>
+        h1 {
+            background-color: rgb(64, 176, 38);
+        }
+
+        li {
+            background-color: darkslategrey;
+        }
+
+        #main-header, li {
+            color: antiquewhite;
+        }
+
+        .sub-header {
+            color: gold;
+        }
+
+        span li {
+            background-color: aquamarine;
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- THe inline overrides the embedded -->
+    <h1 id="main-header">Today's Participation</h1>
+    <h1 style="background-color: blue;">But wait, there's more</h1>
+    <ul>
+        <li></li>
+        <li style="background-color: red;"></li>
+    </ul>
+    <table>
+        <tr>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+    <h2 class="sub-header">This is a L2 Header</h2>
+
+    <h3 class="sub-header">This is a L3 Header</h3>
+
+    <span>This is a span
+        <ol>
+            <li>This is inside of a spam</li>
+        </ol>
+    </span>
+</body>
+</html>
