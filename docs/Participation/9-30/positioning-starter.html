@@ -33,13 +33,13 @@
             color: blue;
             background-color: azure;
             /* default positioning */
-            /* position: static;  */
+            /* position: static; */
 
             /* relative - Relative positioning positions the element relative 
                 to the element's default position */
-            /* position: relative; */
-            /* left: -50px; */
-            /* top: -50px; */
+            position: relative;
+            left: -50px;
+            top: -50px;
 
             /*  fixed - Fixed positioning positions the element relative to the
                 viewport in a fixed location */
@@ -69,17 +69,18 @@
         #top {
             background-color: lightgrey;
             /* position: fixed; */
+            position: relative;
             /* left: 10px; */
             /* top: 10px; */
             /* z-index: 10; */
-            /* z-index: 3; */
+            z-index: 3; 
         }
 
         #bottom {
             background-color: lightgoldenrodyellow;
-            /* position: fixed; */
-            /* left: 100px; */
-            /* top: 100px; */
+            position: relative;
+            left: -100px;
+            top: -100px;
             /* z-index: 3; */
             /* z-index: 10; */
         }
@@ -93,9 +94,6 @@
 <body>
     <div id="top">Top (bottom?)</div>
     <div id="middle">Middle</div>
-    <!-- <div id="container">
-        <div id="middle">Middle</div>
-    </div> -->
     <div id="bottom">Bottom (top?)</div>
 
 </body>
