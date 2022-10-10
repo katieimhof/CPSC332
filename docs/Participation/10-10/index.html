@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 1 Demo</title>
+
+    <script>
+        window.onload = function () {
+            var myInt = "42"; // var is a function level scope
+            let myOtherInt = 9001; // let is a block level scope, let is the recommended way to declare a variable
+            anotherInt = 9000;
+
+            //alert("I'm annoying!");
+
+            const SOME_VALUE = 3.14159;
+
+            let myDouble = [5, "hello", 3.14, "world"];
+            let myVar;
+            let myOtherVar = null;
+            //
+
+            /*
+            
+            */
+            //alert("I'm more annoying!");
+
+            console.log("this is a console message")
+            prompt("Do you want to play a game?")
+
+            if (true) {
+                var y = 42;
+            }
+
+            //console.log(y);
+
+            let number = 2;
+
+            console.log(number + 2);
+            console.log(number + "2");
+            console.log(number + parseInt(aString));
+
+            function printTwoThingsToTheConsole(message, someNumbers) {
+                console.log("The message is: " + message + "and someNumber is: " + someNumber);
+                return 9001; // this makes it a function that returns a value
+            }
+
+            printTwoThingsToTheConsole(42, "This is my message")
+
+            (function() {
+                console.log("Hello");
+            })()
+            let arrowAdd2 = (x, y, z) => x + 2;
+
+            arrowAdd2(40, 1, 2);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Javascript, Yay!</h1>
+    <a href="../../index.html">Back to the participation index</a>
+</body>
+
+</html>
