@@ -61,7 +61,64 @@
 
             function updateClock() {
                 console.log("I'm a clock!");
+                let date = new Date();
+                document.getElementById("date-span").textContent = date;
             }
+
+            // changing CSS with javascript
+            let mouseHover = document.getElementById("fieldset");
+            mouseHover.addEventListener("mouseover", () => { // change background
+                // works
+                // alert("hovering over a fieldset")
+
+                let divs = document.getElementsByTagName("div");
+
+                for(const div of divs) {
+                    //add a style (inline)
+                    div.style.setProperty("background-color", "blue");
+                }
+                // insert a rule into the stylesheet
+                document.styleSheets[0]
+                .insertRule("li {background-color: purple;}")
+            });
+
+            document.getElementById("fieldset")
+                .addEventListener("mouseout", function(){
+                    let divs = document.getElementsByTagName("div");
+
+                    for(const div of divs) {
+                        //add a style (inline)
+                        div.style.removeProperty("background-color");
+                    }
+                    // insert a rule into the stylesheet
+                    document.styleSheets[0]
+                    .deleteRule("li")
+
+                    // 1. add event handlers for buttons
+                    document.getElementById("remove-div")
+                        .addEventListener("click", removeDiv);
+                    document.getElementById("add-div")
+                        .addEventListener("click", addDiv);
+                    
+                        function removeDiv() {
+                            if (document.getElementById("temp-div") != null) {
+                                document.getElementById("temp-div").remove();
+                            }
+                            
+                        };
+
+                        function addDiv() {
+                            // only add if the div isn't already there
+                            if(document.getElementById("temp-div") == null) {
+
+                                // create a new variable for building our HTML element
+                                let newDiv = document.createElement("div");
+                                newDiv.id = "temp-div";
+                                newDiv.style = "border: 2px solid red; padding: 10px; border-radius: 30px; margin: 15px;";
+                                document.getElementById("container").appendChild(newDiv);
+                            }    
+                        };
+                });
 
         }//end of onload function
     </script>
@@ -92,7 +149,7 @@
     </ul>
     </p>
     <!-- #1 -->
-    <fieldset>
+    <fieldset id="fieldset">
         <legend>
             <strong><em>JavaScript Clock</em></strong>
         </legend>
