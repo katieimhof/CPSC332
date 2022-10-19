@@ -162,9 +162,13 @@
             // ball1.draw();
             // ball1.draw(true);
 
-            var ball2 = new Ball(25, "red", [85, 55]);
+            var ball2Coords = [85, 55];
+            var xInc = 3;
+            var yInc = 3;
+
+            var ball2 = new Ball(25, "red", ball2Coords);
             // ball2.setName("Red Ball 2");
-            // ball2.draw();
+            ball2.draw();
             // ball2.move(200, 155);
 
             // ball1.draw(); //would need to redraw the ball if we don't want it cut from overlap
