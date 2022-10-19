@@ -116,9 +116,38 @@
                                 newDiv.id = "temp-div";
                                 newDiv.style = "border: 2px solid red; padding: 10px; border-radius: 30px; margin: 15px;";
                                 document.getElementById("container").appendChild(newDiv);
+
+                                // let's add a paragraph to the new div
+                                let newP = document
+                                    .createElement("p");
+                                let date = new Date();
+                                // set the content for our paragrah
+                                newP.textContent = 
+                                    `Hello, World! I was created at ${date}`;
+                                // attach as a child to the new div we just created
+                                // and attached to the DOM
+                                document.getElementById("temp-div")
+                                    .appendChild(newP);
                             }    
                         };
                 });
+
+                document.getElementById("temp-div") 
+                    .addEventListener("click", () => {
+                        alert("temp-div clicked")
+                    });
+                
+                // solution: attach event listener to a containing element that is static
+                // element that is static i.e., constant and exists!
+                document.getElementById("container")
+                    .addEventListener("click", function(e) {
+                        if (e.target.id == "temp-div") {
+                            alert("dynamic temp-div clicked!");
+                        }
+                        else {
+                            alert("it was not temp-div");
+                        }
+                    });
 
         }//end of onload function
     </script>
