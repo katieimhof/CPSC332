@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        legend {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        fieldset {
+            border: 2px dashed purple;
+            padding: 2px;
+            margin: 2px;
+        }
+
+        form {
+            padding: 2px;
+            margin: 2px;
+
+        }
+
+        button {
+            color: orange;
+            background-color: black;
+        }
+    </style>
+
+    <script> 
+        // Save Buttons Actions
+        document.getElementById("dayBtn")
+            .addEventListener("click", saveInputDay());
+        document.getElementById("costBtn")
+            .addEventListener("click", saveInputCost());
+        document.getElementById("candyBtn")
+            .addEventListener("click", saveInputCandy());
+
+        function saveInputDay() {
+            // Check the label has something in it
+            if(document.getElementById("day") != null) {
+                // Display message to show success
+                console.log("Saved!");
+            }
+            else {
+                // Display error message 
+                console.log("ERROR! The box is empty. Please enter an input in the box.");
+            }
+        };
+
+        function saveInputDayCost() {
+            // Check the label has something in it
+            if(document.getElementById("costume") != null) {
+                // Display message to show success
+                console.log("Saved!");
+            }
+            else {
+                // Display error message
+                console.log("ERROR! The box is empty. Please enter an input in the box.");
+            }
+        };
+
+        function saveInputDayCandy() {
+            // Check the label has something in it
+            if(document.getElementById("candy") != null) {
+                // Display message to show success
+                console.log("Saved!");
+            }
+            else {
+                // Display error message
+                console.log("ERROR! The box is empty. Please enter an input in the box.");
+            }
+        };
+
+        // Submit Button Action
+        function sbmt() {
+            if(document.getElementById("day") != null) {
+                if(document.getElementById("costume") != null) {
+                    if(document.getElementById("candy") != null) {
+                        // Put info on submission.html and redirect to that page
+                        
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>CPSC 332 10/21 Participation</legend>
+        <form action="./submission.html" method="POST">
+            <label for="day">What day is Halloween on?</label>
+            <input type="text" id="day" name="day">
+            <button id="dayBtn" >Save Data</button><br>
+            <label for="costume">What are you dressing up as for Halloween?</label>
+            <input type="text" id="costume" name="costume">
+            <button id="costBtn">Save Data</button><br>
+            <label for="candy">What is your favorite candy?</label>
+            <input type="text" id="candy" name="candy">
+            <button id="candyBtn">Save Data</button><br>
+            <input type="button" value="Submit Response" onclick="sbmt()">
+        </form>
+    </fieldset>
+</body>
+</html>
