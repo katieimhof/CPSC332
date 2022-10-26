@@ -21,22 +21,31 @@
         //we can use .ready instead of window.onload
         $(document).ready(function () {
             //#3 create a JQuery object by passing the JQuery function a selected DOM node
-
-
+            var $container = jQuery(document.getElementById("container"));
+            
             //#4 we can use a "shorthand" version of this with $()!
-
+            var $containerToo = $("#container");
 
             //#5 JQuery object has access to JQuery specific methods and selectors!
             //we can select DOM elements (as seen in #4)
             //NOTE: need to include the type prefix!, e.g., . or # for class or id
-
+            $("ol").addClass("ordered-list");
+            $(".ordered-list").append("<li>JQuery Introduction</li>");
+            $(".ordered-list").append($("<li>").text("Selectors"));
 
             //there are other selectors, this one finds all that contain matching word
-
+            var $filteredContent = $("li:contains('JQuery')");
 
             //#6 Events -- handled similar to standard JS but more concise!
             //let's add a button with JQuery. it's content (label) and an id!
+            $("#container").click(()=> {
+                alert("clicked")
+            });
 
+            $("#container").on("click", callBackFunction); // this achieves the same thing as the line above
+            function callBackFunction() {
+                alert("another click");
+            }
             //now let's add an event handler for when we click it
 
 
