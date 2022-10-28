@@ -11,9 +11,9 @@
     <!-- Reference a CDN (Content Delivery Network) source -->
     <!-- Get the latest at https://code.jquery.com/ -->
 
-    <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-         crossorigin="anonymous"></script> -->
+         crossorigin="anonymous"></script>
 
     <script>
 
@@ -38,14 +38,30 @@
 
             //#6 Events -- handled similar to standard JS but more concise!
             //let's add a button with JQuery. it's content (label) and an id!
+
+            // in JavaScript, same as below it 
+            document.getElementById("container").addEventListener("click", callbackFunction);
+
             $("#container").click(()=> {
-                alert("clicked")
+                alert("clicked");
             });
 
-            $("#container").on("click", callBackFunction); // this achieves the same thing as the line above
-            function callBackFunction() {
+            $("#container").on("click", callbackFunction); // this achieves the same thing as the line above
+            function callbackFunction() {
                 alert("another click");
             }
+
+            // another way to do it
+            function callbackFunction() {
+                concole.log("Div clicked: (HTML content JS: "
+                + this.innerHTML
+                + ")");
+
+                console.log("Div clicked: (HTML content JQuery: "
+                + $(this).html()
+                + ")");
+            }
+
             //now let's add an event handler for when we click it
 
 
@@ -53,22 +69,56 @@
 
             //let's try a different event
             //JavaScript Method
+            let header = document.getElementsByTagName("h1");
 
-
+            for (const element of headers) {
+                element.addEventListener("dblclick", function() {
+                    concole.log("double click detected on h1 element");
+                    $("body").append($("<h2>").text("New h2!"));
+                });
+            }
 
             //JQuery Method
-
+            $("h1").on("dblclick", function() {
+                console.log("double click detected on h1 element");
+                $("body").append($("<h2").text("New h2!"));
+            });
 
             //#7. Styles!
             //method 1: property-value pair
-
+            $("div").css("border", "2px double purple");
             //method 2: object literal
+            $("div").css({
+                padding: "10px",
+                borderRadius: "20px",
+                "margin-top": "10px",
+                marginBottom: "5px",
+                backgroundColor: "rgb(235, 97, 35)"
+            });
 
 
             //Activity (Using JQuery):
             //1. Center the button created in this lecture using the property-value pair CSS method 1 demonstrated during lecture.
             //2. Apply a background color, border, padding, and margin (your choice) to the ordered list using the object literal method demonstrated during lecture
             //3. Add an event listener to the ordered list list items so the color changes as you hover over each individual list item (color is your choice).
+
+            // 1.
+            $("button").css("text-align", "center") // need to make the button
+
+            // 2.  
+            $("div").css({
+                padding: "10px",
+                borderRadius: "20px",
+                "margin-top": "10px",
+                marginBottom: "5px",
+                backgroundColor: "rgb(235, 97, 35)"
+            }); // need tp change this
+
+            $("div").attr("class", "draggable ui-widget-content");
+
+            $(function(){
+                $(".draggable").draggable(); // this will be implemented from the JQuery library
+            });
 
         }); //end of ready function 
     </script>
@@ -82,6 +132,11 @@
 
         </ol>
     </div>
+
+<body>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+    <a href="../../index.html">Back to the participation index</a>
+</body>
 </body>
 
 </html>
